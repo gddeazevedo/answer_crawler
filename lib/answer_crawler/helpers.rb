@@ -15,9 +15,9 @@ def get_replaced_token(old_token)
 
     new_token = old_token.split ''
 
-    for i in 0...new_token.size
-        new_token[i] = replacements.has_key?(new_token[i]) ? 
-            replacements[new_token[i]] : new_token[i]
+    new_token.each_index do |index|
+        new_token[index] = replacements.has_key?(new_token[index]) ? 
+            replacements[new_token[index]] : new_token[index]
     end
 
     new_token.join ''
